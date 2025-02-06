@@ -4,6 +4,11 @@ import psycopg2
 
 from typing import List
 
+def show_dims(df: pd.DataFrame):
+    print(df.head())
+    print(df.columns)
+    print(df.shape)
+
 def fast_pg_insert(df: pd.DataFrame, connection: str, table_name: str, columns: List[str]) -> None:
     """
         Inserts data from a pandas DataFrame into a PostgreSQL table using the COPY command for fast insertion.
